@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwqshph4lek2b"]
+
+[ext_resource type="Script" uid="uid://bct3hxwpn6380" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+script = ExtResource("1_4flbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Player/Camera3D"]
+light_color = Color(1, 0.929412, 0.878431, 1)
+light_energy = 4.0
+light_indirect_energy = 2.455
+light_volumetric_fog_energy = 1.205
+light_size = 0.303

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwqshph4lek2b"]
+
+[ext_resource type="Script" uid="uid://bct3hxwpn6380" path="res://player.gd" id="1_ig7tw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1bvp3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7mycd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(0.270588, 0.760784, 0.862745, 1)
+metallic = 0.34
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+script = ExtResource("1_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.8, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_1bvp3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_lquwl")
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7mycd")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("BoxShape3D_272bh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.13664, 4.4188, 0.245262)
+light_color = Color(1, 0.827451, 0.572549, 1)
+light_energy = 3.0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
