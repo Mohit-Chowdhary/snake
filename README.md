@@ -20,42 +20,42 @@ The maze in this project is procedurally generated using a depth-first search (D
 How it Works
 
 * Grid Initialization:
-* The maze is represented as a 2D array of boolean values, where true indicates a walkable cell and false is a wall. The outer boundaries are always walls.
+* **The maze is represented as a 2D array of boolean values, where true indicates a walkable cell and false is a wall. The outer boundaries are always walls.
 
 * DFS Maze Generation:
 
-* Starts at a random initial cell.
+* **Starts at a random initial cell.
 
-* Chooses a random neighbor two cells away that hasn’t been visited.
+* **Chooses a random neighbor two cells away that hasn’t been visited.
 
-Marks the cell between the current and neighbor as walkable to “carve” a path.
+* **Marks the cell between the current and neighbor as walkable to “carve” a path.
 
-Recursively moves to the neighbor, using a stack to backtrack when no unvisited neighbors exist.
+* **Recursively moves to the neighbor, using a stack to backtrack when no unvisited neighbors exist.
 
-Dead-End Reduction:
-After generating the maze, some dead ends are optionally opened up to improve gameplay flow, giving the player more choices while navigating.
+*Dead-End Reduction:
+* **After generating the maze, some dead ends are optionally opened up to improve gameplay flow, giving the player more choices while navigating.
 
-3D Construction:
+*3D Construction:
 
-Walkable paths are empty, while walls are represented with StaticBody3D and BoxMesh objects.
+* **Walkable paths are empty, while walls are represented with StaticBody3D and BoxMesh objects.
 
-A floor is created to cover the entire maze area.
+* **A floor is created to cover the entire maze area.
 
-Walls and floor include proper collision shapes for the player and AI.
+* **Walls and floor include proper collision shapes for the player and AI.
 
-Integration with Game Systems:
+*Integration with Game Systems:
 
-Player and snake spawn positions are chosen from walkable cells.
+* **Player and snake spawn positions are chosen from walkable cells.
 
-The scent map overlays the maze grid for the AI to track the player.
+* **The scent map overlays the maze grid for the AI to track the player.
 
-Skills Demonstrated
+*Skills Demonstrated
 
-Procedural content generation (DFS algorithm, dead-end handling)
+* **Procedural content generation (DFS algorithm, dead-end handling)
 
-Grid-based 3D world construction (mesh instancing, collision setup)
+* **Grid-based 3D world construction (mesh instancing, collision setup)
 
-Integration with AI pathfinding and game logic
+* **Integration with AI pathfinding and game logic
 
 ## Work in Progress
 
