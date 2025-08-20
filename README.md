@@ -32,10 +32,10 @@ How it Works
 
  * Recursively moves to the neighbor, using a stack to backtrack when no unvisited neighbors exist.
 
-*Dead-End Reduction:
+* Dead-End Reduction:
  * After generating the maze, some dead ends are optionally opened up to improve gameplay flow, giving the player more choices while navigating.
 
-*3D Construction:
+* 3D Construction:
 
  * Walkable paths are empty, while walls are represented with StaticBody3D and BoxMesh objects.
 
@@ -43,13 +43,13 @@ How it Works
 
  * Walls and floor include proper collision shapes for the player and AI.
 
-*Integration with Game Systems:
+* Integration with Game Systems:
 
  * Player and snake spawn positions are chosen from walkable cells.
 
  * The scent map overlays the maze grid for the AI to track the player.
 
-*Skills Demonstrated
+* Skills Demonstrated
 
  * Procedural content generation (DFS algorithm, dead-end handling)
 
