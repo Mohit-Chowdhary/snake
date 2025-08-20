@@ -20,13 +20,13 @@ The maze in this project is procedurally generated using a depth-first search (D
 How it Works
 
 * Grid Initialization:
-* **The maze is represented as a 2D array of boolean values, where true indicates a walkable cell and false is a wall. The outer boundaries are always walls.
+* The maze is represented as a 2D array of boolean values, where true indicates a walkable cell and false is a wall. The outer boundaries are always walls.
 
 * DFS Maze Generation:
 
-* **Starts at a random initial cell.
+* Starts at a random initial cell.
 
-  * **Chooses a random neighbor two cells away that hasn’t been visited.
+* Chooses a random neighbor two cells away that hasn’t been visited.
 
 Marks the cell between the current and neighbor as walkable to “carve” a path.
 
